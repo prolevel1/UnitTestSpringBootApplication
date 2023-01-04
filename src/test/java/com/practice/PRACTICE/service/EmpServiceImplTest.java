@@ -35,8 +35,8 @@ class EmpServiceImplTest {
     public void setup() {
       employee = Employee.builder()
               .empId(1)
-              .firstName("Sonam")
-              .lastName("Singh")
+              .firstName("abc")
+              .lastName("xyz")
               .build();
     }
     @DisplayName("JUnit Test for get All Employees")
@@ -44,8 +44,8 @@ class EmpServiceImplTest {
     public void getAllEmpTest() {
         Employee employee1 = Employee.builder()
                 .empId(2)
-                .firstName("Raj")
-                .lastName("Kumar")
+                .firstName("ahs")
+                .lastName("pqrs")
                 .build();
         given(empRepo.findAll()).willReturn(List.of(employee, employee1));
 

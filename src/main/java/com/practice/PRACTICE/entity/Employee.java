@@ -1,8 +1,15 @@
 package com.practice.PRACTICE.entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.GenerationType;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
-import jakarta.persistence.*;
-import lombok.*;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Table(name = "Employee")
