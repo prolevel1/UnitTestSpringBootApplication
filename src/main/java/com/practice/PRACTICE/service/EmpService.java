@@ -1,11 +1,8 @@
 package com.practice.PRACTICE.service;
-
-import com.practice.PRACTICE.entity.Employee;
+import java.util.List;
 import com.practice.PRACTICE.exception.ObjectNotFound;
 import com.practice.PRACTICE.exception.ResourceNotFoundException;
-
-import java.util.List;
-import java.util.Map;
+import com.practice.PRACTICE.entity.Employee;
 
 public interface EmpService {
     Employee create(Employee employee);

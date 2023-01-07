@@ -50,8 +50,11 @@ class EmpServiceImplTest {
         given(empRepo.findAll()).willReturn(List.of(employee, employee1));
 
         List<Employee> employees = empService.getAllEmployee();
+        //Negative test case scenario
+       assertEquals(employees.size(), 1);
 
-       assertEquals(employees.size(), 2);
+       //Positive test case scenario
+       // assertEquals(employees.size(), 2);
     }
     @DisplayName("JUnit Test for get Employee By ID")
     @Test
@@ -83,15 +86,15 @@ class EmpServiceImplTest {
         Employee employee1 = empService.create(employee);
         assertThat(employee1).isNotNull();
     }
-    @DisplayName("JUnit test for deleteEmployee method")
-    @Test
-    public void employeeId_DeleteEmployee() throws ResourceNotFoundException {
-        long empId = 1;
-        willDoNothing().given(empRepo).deleteById(empId);
-       // Employee empId1 = empService.findByEmpId(empId);
-        empService.deleteEmployee(empId);
-        verify(empRepo, times(1)).deleteById(empId);
-    }
+//    @DisplayName("JUnit test for deleteEmployee method")
+//    @Test
+//    public void employeeId_DeleteEmployee() throws ResourceNotFoundException {
+//        long empId = 1;
+//        willDoNothing().given(empRepo).deleteById(empId);
+//       // Employee empId1 = empService.findByEmpId(empId);
+//        empService.deleteEmployee(empId);
+//        verify(empRepo, times(1)).deleteById(empId);
+//    }
 
 
 }

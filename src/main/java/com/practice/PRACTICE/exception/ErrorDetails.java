@@ -1,8 +1,8 @@
 package com.practice.PRACTICE.exception;
-
+import java.util.Date;
 import lombok.Getter;
 
-import java.util.Date;
+
 @Getter
 public class ErrorDetails {
     private Date timestamp;

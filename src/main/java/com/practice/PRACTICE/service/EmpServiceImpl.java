@@ -4,6 +4,7 @@ import com.practice.PRACTICE.entity.Employee;
 import com.practice.PRACTICE.exception.ObjectNotFound;
 import com.practice.PRACTICE.exception.ResourceNotFoundException;
 import com.practice.PRACTICE.repo.EmpRepo;
+import com.practice.PRACTICE.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,8 @@ import java.util.List;
 public class EmpServiceImpl implements EmpService{
     @Autowired
     private EmpRepo empRepo;
+    @Autowired
+    private Constants constants;
     @Override
     public Employee create(Employee employee) {
         return empRepo.save(employee);
@@ -45,6 +48,7 @@ public class EmpServiceImpl implements EmpService{
         Employee updated = this.empRepo.save(employee);
         return updated;
     }
+
     @Override
     public Employee findByName(String fName, String lName) throws ObjectNotFound {
         List<Employee> employees = this.getAllEmployee();
@@ -57,7 +61,8 @@ public class EmpServiceImpl implements EmpService{
 
         }
         if (res == null) {
-            throw  new ObjectNotFound("OBJECT_NOT_FOUND");
+           // throw  new ObjectNotFound("OBJECT_NOT_FOUND");
+            throw new ObjectNotFound(constants.getOBJECT_NOT_FOUND());
         }
         return res;
     }
