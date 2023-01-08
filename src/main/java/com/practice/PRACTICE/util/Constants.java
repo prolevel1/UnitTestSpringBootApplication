@@ -1,10 +1,12 @@
 package com.practice.PRACTICE.util;
 
 import lombok.Getter;
-import org.springframework.stereotype.Component;
 
-@Component
-@Getter
-public class Constants {
-    private final String OBJECT_NOT_FOUND = "object not found" ;
+
+public  class Constants {
+    private Constants() {
+
+    }
+    public static final String OBJECT_NOT_FOUND = "object not found" ;
+
 }

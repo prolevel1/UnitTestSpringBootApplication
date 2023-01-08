@@ -9,13 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+import static com.practice.PRACTICE.util.Constants.*;
 @Service
 public class EmpServiceImpl implements EmpService{
     @Autowired
     private EmpRepo empRepo;
-    @Autowired
-    private Constants constants;
+
     @Override
     public Employee create(Employee employee) {
         return empRepo.save(employee);
@@ -61,8 +60,8 @@ public class EmpServiceImpl implements EmpService{
 
         }
         if (res == null) {
-           // throw  new ObjectNotFound("OBJECT_NOT_FOUND");
-            throw new ObjectNotFound(constants.getOBJECT_NOT_FOUND());
+
+            throw new ObjectNotFound(OBJECT_NOT_FOUND);
         }
         return res;
     }
