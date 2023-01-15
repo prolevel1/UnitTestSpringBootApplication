@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import static com.practice.PRACTICE.util.Constants.*;
+
 @Service
 public class EmpServiceImpl implements EmpService{
     @Autowired
@@ -61,7 +61,7 @@ public class EmpServiceImpl implements EmpService{
         }
         if (res == null) {
 
-            throw new ObjectNotFound(OBJECT_NOT_FOUND);
+            throw new ObjectNotFound(Constants.OBJECT_NOT_FOUND);
         }
         return res;
     }
