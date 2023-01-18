@@ -51,18 +51,11 @@ public class EmpServiceImpl implements EmpService{
     @Override
     public Employee findByName(String fName, String lName) throws ObjectNotFound {
         List<Employee> employees = this.getAllEmployee();
-        Employee res = null;
-        for (Employee e : employees) {
-            if (e.getLastName().equalsIgnoreCase(lName) && e.getFirstName().equalsIgnoreCase(fName)) {
-                res =   e;
-                break;
-            }
+        Employee res = employees.stream()
+                .filter(employee -> employee.getFirstName().equalsIgnoreCase(fName) && employee.getLastName().equalsIgnoreCase(lName))
+                .findAny()
+                .orElseThrow(() -> new  ObjectNotFound(Constants.OBJECT_NOT_FOUND));
 
-        }
-        if (res == null) {
-
-            throw new ObjectNotFound(Constants.OBJECT_NOT_FOUND);
-        }
         return res;
     }
 }
